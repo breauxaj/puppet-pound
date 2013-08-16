@@ -1,0 +1,18 @@
+User "pound"
+Group "pound"
+Control "/var/lib/pound/pound.ctl"
+
+ListenHTTPS
+    Address    0.0.0.0
+    Port       443
+    Cert       "/etc/pki/tls/certs/<%= pem %>.pem"
+    HeadRemove "X-Forwarded-Proto"
+    AddHeader  "X-Forwarded-Proto: https"
+End
+
+Service
+    BackEnd
+        Address 127.0.0.1
+        Port    80
+    End
+End
