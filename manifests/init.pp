@@ -1,6 +1,6 @@
 class pound {
   $required = $operatingsystem ? {
-    /(?i-mx:centos|fedora|redhat|scientific)/ => 'pound',
+    /(?i-mx:centos|fedora|redhat|scientific)/ => 'Pound',
   }
 
   package { $required: ensure => latest }
