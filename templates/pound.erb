@@ -5,7 +5,7 @@ Control "/var/lib/pound/pound.ctl"
 ListenHTTPS
     Address    0.0.0.0
     Port       443
-    Cert       "/etc/pki/tls/certs/<%= pem %>.pem"
+    Cert       "/etc/pki/tls/certs/<%= @pemfile %>"
     HeadRemove "X-Forwarded-Proto"
     AddHeader  "X-Forwarded-Proto: https"
 End

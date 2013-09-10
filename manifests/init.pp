@@ -24,7 +24,7 @@ class pound::service ( $ensure = running,
 
 }
 
-define pound::config ( $pem ) {
+define pound::config ( $pemfile ) {
   $service = $operatingsystem ? {
     /(?i-mx:centos|fedora|redhat|scientific)/ => 'pound',
   }
